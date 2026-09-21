@@ -11,11 +11,11 @@ struct Cars {
     string model;
     int year;
     int* mileage;
-    
+
 };
 
 int inputinfo(Cars *, int val);
-void displayinfo(Cars *);
+void displayinfo(Cars *, int numvisits, int customnum);
 
 int main(){
 
@@ -34,6 +34,7 @@ int main(){
 
     }
 
+    cout << "CUSTOMER INFO DISPLAY: " << endl;
     for(int i = 0; i < NUM_CARS; i++){
         displayinfo(&total[i], visit[i]);
     }
@@ -64,10 +65,14 @@ int inputinfo(Cars *total, int val){
         cin >> total -> mileage[i];
     }
 
-    return visits
+    return visits;
 
 }
 
-void displayinfo(Cars *total,){
-    for
+void displayinfo(Cars *total, int numvisits, int customnum){
+    cout << "Number #" << customnum << endl;;
+    cout << "Brand: " << total -> brand;
+    cout << "Model: "
+    cout << ""
+
 }

@@ -25,6 +25,7 @@ int main(){
     cout << "Enter the number cars oil changed ";
     cout << " and mileage from recent visits: ";
     cin >> NUM_CARS;
+    cin.ignore();
 
     Cars *total = new Cars[NUM_CARS];
     
@@ -56,15 +57,12 @@ int inputinfo(Cars *total, int val){
 
     cout << "Brand: ";
     getline(cin, total -> brand);
-    cin.ignore();
 
     cout << "Country Car Is Manufactured: ";
     getline(cin, total ->country);
-    cin.ignore();
 
     cout << "Model: ";
     getline(cin, total -> model);
-    cin.ignore();
 
     cout << "Year: ";
     cin >> total -> year;
@@ -79,12 +77,15 @@ int inputinfo(Cars *total, int val){
         cin >> total -> mileage[i];
     }
 
+    cin.ignore();
+
     return visits;
 
 }
 
 void displayinfo(Cars *total, int numvisits, int customnum){
     cout << "Number #" << customnum << endl;
+    cout << "Country: " << total -> country << endl;
     cout << "Brand: " << total -> brand << endl;
     cout << "Model: " << total -> model << endl;
     cout << "Year: " << total -> year << endl;

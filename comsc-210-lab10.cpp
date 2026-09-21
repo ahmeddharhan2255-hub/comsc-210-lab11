@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 struct Cars {
@@ -12,12 +13,13 @@ struct Cars {
     int* mileage;
 };
 
-void inputinfo(Cars *, int val);
+int inputinfo(Cars *, int val);
 void displayinfo(Cars *);
 
 int main(){
 
     int NUM_CARS;
+    vector<int> visit;
     
     cout << "Enter the number cars oil changed ";
     cout << " and mileage from recent visits: ";
@@ -26,18 +28,19 @@ int main(){
     Cars *total = new Cars[NUM_CARS];
     
     for(int i = 0; i < NUM_CARS; i++){
-        inputinfo(&total[i], i + 1);
+        int value = inputinfo(&total[i], i + 1);
+        visit.push_back(value);
+
     }
 
     for(int i = 0; i < NUM_CARS; i++){
-        displayinfo(&total[i]);
+        displayinfo(&total[i], visit[i]);
     }
-
     return 0;
 
 }
 
-void inputinfo(Cars *total, int val){
+int inputinfo(Cars *total, int val){
     int visits;
 
     cout << "Enter customer #" << val << " info:" << endl;
@@ -54,14 +57,16 @@ void inputinfo(Cars *total, int val){
     cin >> visits;
 
     total -> mileage = new int[visits];
-    
+
     for(int i = 0; i < visits; i++){
         cout << "Enter mileage for visit #" << i << endl;
         cin >> total -> mileage[i];
     }
 
+    return visits
+
 }
 
-void displayinfo(Cars *total){
-    
+void displayinfo(Cars *total,){
+    for
 }

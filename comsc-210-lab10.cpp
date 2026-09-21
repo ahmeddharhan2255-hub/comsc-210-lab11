@@ -36,7 +36,7 @@ int main(){
 
     cout << "CUSTOMER INFO DISPLAY: " << endl;
     for(int i = 0; i < NUM_CARS; i++){
-        displayinfo(&total[i], visit[i]);
+        displayinfo(&total[i], visit[i], i + 1);
     }
     return 0;
 
@@ -72,7 +72,9 @@ int inputinfo(Cars *total, int val){
 void displayinfo(Cars *total, int numvisits, int customnum){
     cout << "Number #" << customnum << endl;;
     cout << "Brand: " << total -> brand;
-    cout << "Model: "
-    cout << ""
+    cout << "Model: " << total -> model;
+    cout << "Year: " << total -> year;
+
+
 
 }

@@ -13,12 +13,24 @@ struct Cars {
 
 };
 
+void inputinfo(Cars *);
+void displayinfo(Cars *);
+
 int main(){
 
-    int 
-    Cars val;
-    Cars valptr = nullptr;
+    int numCars;
+    
+    cout << "Enter the number of cars you own: ";
+    cin >> numCars;
+
+    Cars *total = new Cars[numCars];
+    
+    for()
 
     return 0;
+
+}
+
+void inputinfo(Cars *){
 
 }

@@ -7,11 +7,12 @@ using namespace std;
 struct Cars {
     string brand;
     string country;
+    string model;
     int year;
     int* mileage;
 };
 
-void inputinfo(Cars *);
+void inputinfo(Cars *, int val);
 void displayinfo(Cars *);
 
 int main(){
@@ -25,7 +26,7 @@ int main(){
     Cars *total = new Cars[NUM_CARS];
     
     for(int i = 0; i < NUM_CARS; i++){
-        inputinfo(&total[i]);
+        inputinfo(&total[i], i + 1);
     }
 
     for(int i = 0; i < NUM_CARS; i++){
@@ -36,8 +37,19 @@ int main(){
 
 }
 
-void inputinfo(Cars *total){
-    
+void inputinfo(Cars *total, int val){
+    cout << "Enter customer #" << val << " info:" << endl;
+    cout << "Brand: ";
+    getline(cin, total -> brand);
+    cout << "Country Car Is Manufactured: ";
+    getline(cin, total ->country);
+    cout << "Model: ";
+    getline(cin, total -> model);
+    cout << "Year: ";
+    cin >> total -> year;
+
+
+
 }
 
 void displayinfo(Cars *total){

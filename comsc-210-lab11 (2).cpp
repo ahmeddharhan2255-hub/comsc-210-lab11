@@ -1,4 +1,7 @@
 // COMSC-210 | Lab 11 | Ahmad Dharhan
+//This programs allows a user to enter
+//"n" number of cars and include info from brand
+//to model etc and track mileage after each oil change
 
 #include <iostream>
 #include <string>
@@ -14,6 +17,7 @@ struct Cars {
 
 };
 
+//Function Prototypes
 int inputinfo(Cars *, int val);
 void displayinfo(Cars *, int numvisits, int customnum);
 
@@ -22,24 +26,30 @@ int main(){
     int NUM_CARS;
     vector<int> visit;
     
-    cout << "Enter the number cars oil changed ";
-    cout << " and mileage from recent visits: ";
+    cout << "Enter the number of cars: ";
     cin >> NUM_CARS;
     cin.ignore();
 
     Cars *total = new Cars[NUM_CARS];
     
+    //Populates num of cars inputted by user
     for(int i = 0; i < NUM_CARS; i++){
         int value = inputinfo(&total[i], i + 1);
         visit.push_back(value);
 
     }
 
+    //Entire sequence displays car data
     cout << "CUSTOMER INFO DISPLAY: " << endl;
+    cout << "***************************" << endl;
+
     for(int i = 0; i < NUM_CARS; i++){
         displayinfo(&total[i], visit[i], i + 1);
+        cout << "***************************" << endl;
     }
 
+    //Deallocates memory  in struct first
+    //and then deallocates total
     for(int i = 0; i < NUM_CARS; i++){
         delete[] total[i].mileage;
     }
@@ -50,6 +60,7 @@ int main(){
 
 }
 
+
 int inputinfo(Cars *total, int val){
     int visits;
 
@@ -58,7 +69,7 @@ int inputinfo(Cars *total, int val){
     cout << "Brand: ";
     getline(cin, total -> brand);
 
-    cout << "Country Car Is Manufactured: ";
+    cout << "Country where car Is Manufactured: ";
     getline(cin, total ->country);
 
     cout << "Model: ";
@@ -84,13 +95,13 @@ int inputinfo(Cars *total, int val){
 }
 
 void displayinfo(Cars *total, int numvisits, int customnum){
-    cout << "Number #" << customnum << endl;
-    cout << "Country: " << total -> country << endl;
-    cout << "Brand: " << total -> brand << endl;
-    cout << "Model: " << total -> model << endl;
-    cout << "Year: " << total -> year << endl;
+    cout << "CAR NUMBER #" << customnum << endl;
+    cout << "COUNTRY: " << total -> country << endl;
+    cout << "BRAND: " << total -> brand << endl;
+    cout << "MODEL: " << total -> model << endl;
+    cout << "YEAR: " << total -> year << endl;
 
-    cout << "Mileage: ";
+    cout << "MILEAGE: ";
 
     for(int i = 0; i < numvisits; i++){
         cout << total -> mileage[i] << " ";

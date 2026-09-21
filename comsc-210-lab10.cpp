@@ -11,6 +11,7 @@ struct Cars {
     string model;
     int year;
     int* mileage;
+    
 };
 
 int inputinfo(Cars *, int val);

@@ -38,6 +38,8 @@ int main(){
 }
 
 void inputinfo(Cars *total, int val){
+    int visits;
+
     cout << "Enter customer #" << val << " info:" << endl;
     cout << "Brand: ";
     getline(cin, total -> brand);
@@ -48,7 +50,15 @@ void inputinfo(Cars *total, int val){
     cout << "Year: ";
     cin >> total -> year;
 
+    cout << "How many oil changes have you had? ";
+    cin >> visits;
 
+    total -> mileage = new int[visits];
+    
+    for(int i = 0; i < visits; i++){
+        cout << "Enter mileage for visit #" << i << endl;
+        cin >> total -> mileage[i];
+    }
 
 }
 

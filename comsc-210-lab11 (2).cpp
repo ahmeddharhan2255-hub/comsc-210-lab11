@@ -1,6 +1,6 @@
 // COMSC-210 | Lab 11 | Ahmad Dharhan
 //This programs allows a user to enter
-//"n" number of cars and include info from brand
+//any number of cars and include info from brand
 //to model etc and track mileage after each oil change
 
 #include <iostream>
@@ -8,6 +8,7 @@
 #include <vector>
 using namespace std;
 
+//struct definition
 struct Cars {
     string brand;
     string country;
@@ -60,7 +61,9 @@ int main(){
 
 }
 
-
+//Populates the element in the array
+//Takes array and val as arguments
+//returns visit for each car to be used for display
 int inputinfo(Cars *total, int val){
     int visits;
 
@@ -94,6 +97,9 @@ int inputinfo(Cars *total, int val){
 
 }
 
+//displays data on cars
+//takes array, visits for each car, and position as arguments
+//returns nothing
 void displayinfo(Cars *total, int numvisits, int customnum){
     cout << "CAR NUMBER #" << customnum << endl;
     cout << "COUNTRY: " << total -> country << endl;
